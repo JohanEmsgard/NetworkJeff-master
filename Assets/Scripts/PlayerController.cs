@@ -51,8 +51,10 @@ public class PlayerController : NetworkBehaviour {
 
 	}
 
+  [Command]
   void Fire()
   {
     GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+    NetworkServer.Spawn(bullet);
   }
 }
